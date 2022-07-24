@@ -8,11 +8,6 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/rgb.h>
 #include <dt-bindings/zmk/outputs.h>
-#include <dt-bindings/zmk/ext_power.h>
-
-#define DEFAULT 0
-#define FUNC 1
-#define LED 2
 
 / {
         keymap {
@@ -21,12 +16,11 @@
                 default_layer {
 
                         bindings = <
-
    &kp ESC         &kp GRAVE   &kp N1       &kp N2       &kp N3       &kp N4       &kp N5       &kp N6       &kp N7       &kp N8       &kp N9       &kp N0       &kp MINUS    &kp EQUAL    &kp BSPC
    &kp PG_UP       &kp TAB     &kp Q        &kp W        &kp E        &kp R        &kp T        &kp Y        &kp U        &kp I        &kp O        &kp P        &kp LBKT     &kp RBKT     &kp BSLH
    &kp PG_DN       &kp TILDE   &kp A        &kp S        &kp D        &kp F        &kp G        &kp H        &kp J        &kp K        &kp L        &kp SEMI     &kp SQT      &kp ENTER                    
                    &kp LSHFT   &kp Z        &kp X        &kp C        &kp V        &kp B        &kp B        &kp N        &kp M        &kp COMMA    &kp DOT      &kp SLASH    &kp RSHFT    &kp UP
-                   &kp LCTRL                &kp LALT                  &mo FUNC     &kp SPACE                 &kp SPACE                 &mo LED                   &mo FUNC     &kp LEFT     &kp DOWN     &kp RIGHT 
+                   &kp LCTRL                &kp LALT                  &kp SPACE    &kp LGUI                  &kp SPACE                 &mo 2                     &mo 1        &kp LEFT     &kp DOWN     &kp RIGHT 
                         >;
                 };
 
@@ -34,8 +28,8 @@
                 function_layer {
 
                         bindings = <
-   &kp C_MUTE      &trans      &kp F1       &kp F2       &kp F3       &kp F4       &kp F5       &kp F6       &kp F7       &kp F8       &kp F9       &kp F10      &kp F11      &kp F12      &DEL
-   &kp C_VOL_DN    &trans      &trans       &trans       &trans       &trans       &trans       &trans       &trans       &trans       &trans       &trans       &trans       &trans       &PIPE
+   &kp C_MUTE      &trans      &kp F1       &kp F2       &kp F3       &kp F4       &kp F5       &kp F6       &kp F7       &kp F8       &kp F9       &kp F10      &kp F11      &kp F12      &kp DEL
+   &kp C_VOL_DN    &trans      &trans       &trans       &trans       &trans       &trans       &trans       &trans       &trans       &trans       &trans       &trans       &trans       &kp PIPE
    &kp C_VOL_UP    &trans      &trans       &trans       &trans       &trans       &trans       &trans       &trans       &trans       &trans       &trans       &trans       &trans    
                    &trans      &trans       &trans       &trans       &trans       &trans       &trans       &trans       &trans       &trans       &trans       &trans       &trans       &kp PG_UP
                    &trans                   &trans                    &trans       &trans                    &trans                    &trans                    &trans       &kp HOME     &kp PG_DN    &kp END 
@@ -45,11 +39,11 @@
                 rgb_layer {
 
                         bindings = <
-   &bootloader       &out OUT_TOG &trans           &trans          &trans          &trans       &trans       &trans       &trans       &trans       &trans       &trans       &trans       &trans       &trans
-   &reset            &bt BT_CLR   &rgb_ug RGB_TOG  &rgb_ug RGB_HUD &rgb_ug RGB_HUI &trans       &trans       &trans       &trans       &trans       &trans       &trans       &trans       &trans       &trans
-   &ext_power EP_TOG &bt BT_SEL 0 &rgb_ug RGB_EFF  &rgb_ug RGB_SAD &rgb_ug RGB_SAI &trans       &trans       &trans       &trans       &trans       &trans       &trans       &trans       &trans 
-                     &bt BT_SEL 1 &rgb_ug RGB_EFR  &rgb_ug RGB_BRD &rgb_ug RGB_BRI &trans       &trans       &trans       &trans       &trans       &trans       &trans       &trans       &trans       &trans       
-                     &bt BT_SEL 2                  &trans                          &trans       &trans                    &trans                    &trans                    &trans       &trans       &trans       &trans       
+   &bootloader  &out OUT_TOG   &trans           &trans          &trans          &trans          &trans       &trans       &trans       &trans       &trans       &trans       &trans       &trans       &trans
+   &reset       &bt BT_CLR     &rgb_ug RGB_TOG  &rgb_ug RGB_HUD &rgb_ug RGB_HUI &rgb_ug RGB_SPI &trans       &trans       &trans       &trans       &trans       &trans       &trans       &trans       &trans
+   &trans       &bt BT_SEL 0   &rgb_ug RGB_EFF  &rgb_ug RGB_SAD &rgb_ug RGB_SAI &rgb_ug RGB_SPD &trans       &trans       &trans       &trans       &trans       &trans       &trans       &trans 
+                &bt BT_SEL 1   &rgb_ug RGB_EFR  &rgb_ug RGB_BRD &rgb_ug RGB_BRI &trans          &trans       &trans       &trans       &trans       &trans       &trans       &trans       &trans       &trans       
+                &bt BT_SEL 2                    &trans                          &trans          &trans                    &trans                    &trans                    &trans       &trans       &trans       &trans       
                         >;
                 };
         };
