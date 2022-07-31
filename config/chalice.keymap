@@ -16,7 +16,7 @@
         
         default_layer {
             activate-behaviors = <
-                &rgb_ug sethsv (128, 255, 64)
+                &RGB_COLOR_HSB sethsv (128, 255, 64)
             >;  
             bindings = <
     &kp ESC     &kp GRAVE   &kp N1       &kp N2       &kp N3       &kp N4       &kp N5       &kp N6       &kp N7       &kp N8       &kp N9       &kp N0       &kp MINUS    &kp EQUAL    &kp BSPC
@@ -30,7 +30,7 @@
 
         function_layer {
             activate-behaviors = <
-                &rgb_ug sethsv (68, 128, 255)
+                &RGB_COLOR_HSB sethsv (68, 128, 255)
             >;
             bindings = <
     &kp C_MUTE   &ext_power EP_TOG        &kp F1       &kp F2       &kp F3       &kp F4       &kp F5       &kp F6       &kp F7       &kp F8       &kp F9       &kp F10      &kp F11      &kp F12      &kp DEL
@@ -43,7 +43,7 @@
 
         rgb_layer {
             activate-behaviors = <
-                &rgb_ug sethsv (255, 64, 28)
+                &RGB_COLOR_HSB sethsv (255, 64, 28)
             >;
             bindings = <
     &bootloader  &out OUT_TOG   &out OUT_USB     &out OUT_BLE    &trans          &trans          &trans       &trans       &trans       &trans       &trans       &trans       &trans       &trans       &trans
